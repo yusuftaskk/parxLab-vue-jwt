@@ -19,23 +19,12 @@ const routes = [{
     path: '/Login',
     name: 'LoginPage',
     component: () => import( /* webpackChunkName: "about" */ '../views/LoginPage.vue'),
-    // beforeEnter(to, from, next) {
-    //   if (!store.getters.isAuthenticated) {
-    //     next();
-    //   } else {
-    //     next("/Login")
-    //   }
-    // }
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
-
-
-
 
 export default router

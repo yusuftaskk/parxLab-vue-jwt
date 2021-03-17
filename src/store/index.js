@@ -31,7 +31,7 @@ export default new Vuex.Store({
         let expirationDate = localStorage.getItem("expirationDate")
         let time = new Date().getTime()
 
-        if (!time >= +expirationDate) {
+        if (time >= +expirationDate) {
           console.log('tokensuresigecmis :>>');
           dispatch("Logout")
         } else { // süre henüz geçmediyse burası calısıyor
@@ -61,7 +61,7 @@ export default new Vuex.Store({
           }
         )
         .then((login_response) => {
-          // console.log("loginresponse", login_response.config);
+          console.log("loginresponse", login_response);
           commit("setToken", login_response.data.data.access_token) // isteğimiz sonrasında tokenımızı state içindeki token a aktarıyoruz.
           localStorage.setItem("token", login_response.data.data.access_token) // Token'ı Local Storage a atıyoruz ki sayfa yenilendiği zaman kullanıcı login ekranına dönmesin
           // localStorage.setItem('expirationDate', new Date().getTime() + 10000)
