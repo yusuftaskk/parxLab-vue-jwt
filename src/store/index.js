@@ -69,7 +69,7 @@ export default new Vuex.Store({
 
 
           // dispatch("setTimeOutTimer", +login_response.data.data.expires_in * 1000) // bize verilen saniyeyi 1000 ile carpıp saat olarak cevirebiliriz.
-          dispatch("setTimeOutTimer", 10000) // expires_in tokenın gecerlilik süresi az olduğundan set time out da 10sn kullandım :)
+          dispatch("setTimeOutTimer", +login_response.data.data.expires_in * 10000) // expires_in tokenın gecerlilik süresi az olduğundan set time out da 10sn kullandım :)
         });
     },
     Logout({
