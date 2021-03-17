@@ -86,7 +86,7 @@ export default new Vuex.Store({
     }, expires_in) {
       setTimeout(() => {
         dispatch("Logout")
-      }, expires_in);
+      }, expires_in );
     }
   },
   modules: {},
